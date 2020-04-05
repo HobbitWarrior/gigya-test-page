@@ -211,7 +211,7 @@ function setuid() {
         userkey: document.getElementById('userkey').value,
         secret: document.getElementById('secretkey').value,
         APIKey: document.getElementById('apikey').value,
-        format: jsonp
+        format: 'jsonp'
     };
     alert(params);
     gigya.socialize.setuid(params);
