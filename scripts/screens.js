@@ -204,7 +204,7 @@ function showLogin() {
     gigya.accounts.showScreenSet(params);
 }
 
-function setuiddo() {
+function setuid() {
     var params = {
         uid: "Default-RegistrationLogin",
         siteUID: "div", 
@@ -213,7 +213,20 @@ function setuiddo() {
 	APIKey:apikey,
 	callback,
 	format: jsonp
-    }
+    };
     gigya.socialize.setuid(params);
 }
 
+
+function setuidForm() {
+    generateForm();
+}
+
+function generateForm()
+{
+    $FormHTML = "";
+    $FormHTML += "<div><form onSubmit='return setuid()'><label for='uid'>uid:</label><br><input type='text' id='uid' name='uid' style='width:200px;'/></form><br/>\n"+
+        "<label for='siteuid'>SiteUID:</label><br><input type='text' id='siteuid' name='siteuid' style='width:200px;'/>\n"+
+        "<input name='Submit' type='submit' value='submit' /></form></div>\n";
+    document.getElementById("div").innerHTML = $FormHTML;
+}
