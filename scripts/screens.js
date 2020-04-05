@@ -204,3 +204,16 @@ function showLogin() {
     gigya.accounts.showScreenSet(params);
 }
 
+function setuiddo() {
+    var params = {
+        uid: "Default-RegistrationLogin",
+        siteUID: "div", 
+        userkey: showResponse,
+	secret: secretkey,
+	APIKey:apikey,
+	callback,
+	format: jsonp
+    }
+    gigya.socialize.setuid(params);
+}
+
