@@ -214,7 +214,7 @@ function setuid() {
         format: 'jsonp'
     };
     alert(JSON.stringify(params));
-    gigya.socialize.setuid(params);
+    gigya.socialize.setUID(params);
 }
 
 
