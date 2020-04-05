@@ -206,14 +206,14 @@ function showLogin() {
 
 function setuid() {
     var params = {
-        uid: "Default-RegistrationLogin",
-        siteUID: "div", 
-        userkey: showResponse,
-	secret: secretkey,
-	APIKey:apikey,
-	callback,
-	format: jsonp
+        uid: document.getElementById('uid').value,
+        siteUID: document.getElementById('siteuid').value,
+        userkey: document.getElementById('userkey').value,
+        secret: document.getElementById('secretkey').value,
+        APIKey: document.getElementById('apikey').value,
+        format: jsonp
     };
+    alert(params);
     gigya.socialize.setuid(params);
 }
 
@@ -225,8 +225,11 @@ function setuidForm() {
 function generateForm()
 {
     $FormHTML = "";
-    $FormHTML += "<div><form onSubmit='return setuid()'><label for='uid'>uid:</label><br><input type='text' id='uid' name='uid' style='width:200px;'/></form><br/>\n"+
-        "<label for='siteuid'>SiteUID:</label><br><input type='text' id='siteuid' name='siteuid' style='width:200px;'/>\n"+
+    $FormHTML += "<div><form onSubmit='setuid()'><label for='uid'>uid:</label><br><input type='text' id='uid' name='uid' style='width:200px;'/></form><br/>\n"+
+        "<label for='siteuid'>SiteUID:</label><br><input type='text' id='siteuid' name='siteuid' style='width:200px;'/><br/>\n"+
+        "<label for='userkey'>userkey:</label><br><input type='text' id='userkey' name='userkey' style='width:200px;'/><br/>\n"+
+        "<label for='secretkey'>secretkey:</label><br><input type='text' id='secretkey' name='secretkey' style='width:200px;'/><br/>\n"+
+        "<label for='apikey'>apikey:</label><br><input type='text' id='apikey' name='apikey' style='width:200px;'/><br/>\n"+
         "<input name='Submit' type='submit' value='submit' /></form></div>\n";
     document.getElementById("div").innerHTML = $FormHTML;
 }
