@@ -212,9 +212,9 @@ function setuid() {
         secret: document.getElementById('secretkey').value,
         APIKey: document.getElementById('apikey').value,
         format: 'jsonp'
-    };
-    alert(JSON.stringify(params));
+    }
     gigya.socialize.setUID(params);
+    alert(JSON.stringify(params));
 }
 
 
