@@ -213,7 +213,7 @@ function setuid() {
         APIKey: document.getElementById('apikey').value,
         format: 'jsonp'
     };
-    alert(params);
+    alert(JSON.stringify(params));
     gigya.socialize.setuid(params);
 }
 
@@ -230,6 +230,6 @@ function generateForm()
         "<label for='userkey'>userkey:</label><br><input type='text' id='userkey' name='userkey' style='width:200px;'/><br/>\n"+
         "<label for='secretkey'>secretkey:</label><br><input type='text' id='secretkey' name='secretkey' style='width:200px;'/><br/>\n"+
         "<label for='apikey'>apikey:</label><br><input type='text' id='apikey' name='apikey' style='width:200px;'/><br/>\n"+
-        "<input name='Submit' type='submit' value='submit' /></form></div>\n";
+        "<button onclick ='setuid()'>see the magic :) </button></form></div>\n";
     document.getElementById("div").innerHTML = $FormHTML;
 }
